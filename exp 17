@@ -1,0 +1,10 @@
+% Database with Name and DOB
+
+person(kavin, '2005-05-10').
+person(pavana, '2010-08-15').
+person(rahul, '2004-12-20').
+person(priya, '2006-03-25').
+
+% Query to display details
+display(Name, DOB) :-
+    person(Name, DOB).
