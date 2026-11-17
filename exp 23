@@ -1,0 +1,13 @@
+% Diet Suggestion System Based on Disease
+
+% Diet suggestions
+diet(diabetes, 'Balanced meals with vegetables and whole grains').
+diet(fever, 'Light meals, fruits and sufficient fluids').
+diet(anemia, 'Iron-rich foods like spinach and beans').
+diet(obesity, 'Balanced meals with vegetables and fruits').
+diet(hypertension, 'Low-salt balanced diet').
+
+% Rule to suggest diet
+suggest_diet(Disease, Diet) :-
+    diet(Disease, Diet).
+
