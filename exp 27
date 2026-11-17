@@ -1,0 +1,41 @@
+% Medical Diagnosis System
+
+% Symptoms of diseases
+
+has_symptom(flu, fever).
+has_symptom(flu, cough).
+has_symptom(flu, headache).
+
+has_symptom(cold, sneezing).
+has_symptom(cold, cough).
+has_symptom(cold, runny_nose).
+
+has_symptom(malaria, fever).
+has_symptom(malaria, chills).
+has_symptom(malaria, sweating).
+
+has_symptom(allergy, sneezing).
+has_symptom(allergy, itching).
+has_symptom(allergy, watery_eyes).
+
+% Diagnosis rules
+
+diagnosis(flu) :-
+    has_symptom(flu, fever),
+    has_symptom(flu, cough),
+    has_symptom(flu, headache).
+
+diagnosis(cold) :-
+    has_symptom(cold, sneezing),
+    has_symptom(cold, cough),
+    has_symptom(cold, runny_nose).
+
+diagnosis(malaria) :-
+    has_symptom(malaria, fever),
+    has_symptom(malaria, chills),
+    has_symptom(malaria, sweating).
+
+diagnosis(allergy) :-
+    has_symptom(allergy, sneezing),
+    has_symptom(allergy, itching),
+    has_symptom(allergy, watery_eyes).
