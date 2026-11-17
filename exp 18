@@ -1,0 +1,12 @@
+
+% Student-Teacher-Subject Code Database
+
+student_teacher(kavin, shakila, cs101).
+student_teacher(rahul, nanthini, cs102).
+student_teacher(priya, kumar, cs103).
+student_teacher(ajay, priya, cs104).
+
+% Display student, teacher and subject code
+
+display(Student, Teacher, SubCode) :-
+    student_teacher(Student, Teacher, SubCode).
