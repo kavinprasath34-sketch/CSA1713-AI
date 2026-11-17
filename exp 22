@@ -1,0 +1,39 @@
+% Family Tree Database
+
+% Facts
+male(kavin).
+male(raja).
+male(arun).
+female(pavana).
+female(lakshmi).
+female(priya).
+
+% Parent relationships
+parent(raja, kavin).
+parent(lakshmi, kavin).
+parent(raja, pavana).
+parent(lakshmi, pavana).
+parent(kavin, arun).
+parent(priya, arun).
+
+% Rules
+father(X, Y) :-
+    parent(X, Y),
+    male(X).
+
+mother(X, Y) :-
+    parent(X, Y),
+    female(X).
+
+sibling(X, Y) :-
+    parent(Z, X),
+    parent(Z, Y),
+    X \= Y.
+
+brother(X, Y) :-
+    sibling(X, Y),
+    male(X).
+
+sister(X, Y) :-
+    sibling(X, Y),
+    female(X).
