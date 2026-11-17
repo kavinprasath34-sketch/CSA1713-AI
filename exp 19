@@ -1,0 +1,15 @@
+% Planets Database
+
+planet(1, mercury).
+planet(2, venus).
+planet(3, earth).
+planet(4, mars).
+planet(5, jupiter).
+planet(6, saturn).
+planet(7, uranus).
+planet(8, neptune).
+
+% Display planet details
+
+display(Number, Planet) :-
+    planet(Number, Planet
