@@ -1,0 +1,16 @@
+positive = ["good", "happy", "excellent", "great", "love"]
+negative = ["bad", "sad", "poor", "hate", "worst"]
+
+text = input("Enter a sentence: ").lower()
+
+words = text.split()
+
+p = sum(word in positive for word in words)
+n = sum(word in negative for word in words)
+
+if p > n:
+    print("Positive Sentiment")
+elif n > p:
+    print("Negative Sentiment")
+else:
+    print("Neutral Sentiment")
