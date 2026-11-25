@@ -1,0 +1,52 @@
+% Medical Diagnosis System
+
+% Symptoms of diseases
+
+symptom(flu, fever).
+symptom(flu, cough).
+symptom(flu, body_pain).
+
+symptom(cold, sneezing).
+symptom(cold, cough).
+symptom(cold, runny_nose).
+
+symptom(malaria, fever).
+symptom(malaria, headache).
+symptom(malaria, chills).
+
+symptom(typhoid, fever).
+symptom(typhoid, headache).
+symptom(typhoid, stomach_pain).
+
+% Diagnosis rules
+
+diagnose(flu) :-
+    symptom(flu, fever),
+    symptom(flu, cough),
+    symptom(flu, body_pain).
+
+diagnose(cold) :-
+    symptom(cold, sneezing),
+    symptom(cold, cough),
+    symptom(cold, runny_nose).
+
+diagnose(malaria) :-
+    symptom(malaria, fever),
+    symptom(malaria, headache),
+    symptom(malaria, chills).
+
+diagnose(typhoid) :-
+    symptom(typhoid, fever),
+    symptom(typhoid, headache),
+    symptom(typhoid, stomach_pain).
+
+% Display diagnosis
+
+check_disease(Disease) :-
+    diagnose(Disease),
+    write('Possible disease: '),
+    write(Disease).
+
+check_disease(_) :-
+    write('No matching disease found').
+
