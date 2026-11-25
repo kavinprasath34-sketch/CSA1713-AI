@@ -1,0 +1,45 @@
+% Graph connections
+
+edge(a, b).
+edge(a, c).
+edge(b, d).
+edge(b, e).
+edge(c, f).
+edge(c, g).
+edge(d, h).
+edge(e, h).
+edge(f, h).
+edge(g, h).
+
+% Heuristic values
+
+heuristic(a, 7).
+heuristic(b, 6).
+heuristic(c, 4).
+heuristic(d, 5).
+heuristic(e, 3).
+heuristic(f, 2).
+heuristic(g, 6).
+heuristic(h, 0).
+
+% Find the path
+
+best_first(Start, Goal, Path) :-
+    best_first_search([Start], Goal, [Start], Path).
+
+best_first_search([Goal | _], Goal, _, [Goal]).
+
+best_first_search([Node | Rest], Goal, Visited, [Node | Path]) :-
+    findall(H-Next,
+        (edge(Node, Next),
+         \+ member(Next, Visited),
+         heuristic(Next, H)),
+        Children),
+    keysort(Children, Sorted),
+    pairs_values(Sorted, NextNodes),
+    append(NextNodes, Rest, NewOpen),
+    best_first_search(NewOpen, Goal,
+        [Node | Visited], Path).
+
+% Required library
+:- use_module(library(pairs)).
